@@ -21,7 +21,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card.jsx";
+} from "@/components/ui/hover-card";
 import { Divider } from "primereact/divider";
 
 const Header = (props) => {
