@@ -1,0 +1,128 @@
+.partnersSection {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  min-height: 60vh;
+  align-items: center;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  /* padding-top: var(--dl-space-space-fourunits); */
+  padding-bottom: var(--dl-space-space-sixunits);
+}
+
+.titleContainer {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: var(--dl-space-space-fourunits);
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--dl-space-space-halfunit);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.captionContainer {
+  right: -10px;
+  bottom: -10px;
+  position: absolute;
+  font-size: 2rem;
+  max-width: 600px;
+  text-align: center;
+  font-family: Satisfy;
+}
+
+.caption {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+
+.partnersImagesContainer {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .titleContainer {
+    position: relative;
+  }
+
+  .captionContainer {
+    right: 2px;
+    bottom: -7px;
+    position: absolute;
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-partners {
+    height: auto;
+    margin-top: var(--dl-space-space-tripleunit);
+    min-height: 50vh;
+    padding-top: var(--dl-space-space-fourunits);
+    padding-left: var(--dl-space-space-fourunits);
+    padding-right: var(--dl-space-space-fourunits);
+    justify-content: flex-start;
+  }
+
+  .titleContainer {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .captionContainer {
+    right: 11px;
+    bottom: -4px;
+    position: absolute;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .caption {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .captionContainer {
+    right: 4px;
+    bottom: -1px;
+    position: absolute;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .home-partners {
+    position: relative;
+    margin-top: var(--dl-space-space-unit);
+    min-height: 85vh;
+    padding-top: var(--dl-space-space-tripleunit);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-tripleunit);
+  }
+
+  .captionContainer {
+    right: 7px;
+    bottom: 8px;
+    position: absolute;
+    font-size: 1.3rem;
+    font-family: Satisfy;
+  }
+}

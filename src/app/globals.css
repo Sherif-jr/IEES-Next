@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+:root {
+  --dl-color-blue-500: #17c1e8ff;
+  --dl-color-gray-500: #595959;
+  --dl-color-gray-700: #999999;
+  --dl-color-gray-800: #d9d9d9;
+  --dl-color-gray-900: #f8f9faff;
+  --dl-color-pink-100: #eea9cdff;
+  --dl-color-pink-200: #e293d3ff;
+  --dl-color-pink-300: #e370abff;
+  --dl-color-pink-500: #dd559bff;
+  --dl-color-pink-700: #cb0c9fff;
+  --dl-size-size-unit: 1rem;
+  --dl-color-gray-black: #000000;
+  --dl-color-gray-white: #ffffff;
+  --dl-space-space-unit: 1rem;
+  --dl-color-primary-100: #00909aff;
+  --dl-color-primary-500: #005d63ff;
+  --dl-color-primary-700: #004c52ff;
+  --dl-size-size-halfunit: 0.5rem;
+  --dl-color-secondary-100: #d2d6daff;
+  --dl-color-secondary-200: #8392abff;
+  --dl-color-secondary-300: #808fbfff;
+  --dl-color-secondary-400: #67748eff;
+  --dl-color-secondary-500: #344767ff;
+  --dl-color-secondary-600: #252f40ff;
+  --dl-color-secondary-700: #20273fff;
+  --dl-radius-radius-round: 50%;
+  --dl-size-size-doubleunit: 2rem;
+  --dl-size-size-tripleunit: 3rem;
+  --dl-space-space-halfunit: 0.5rem;
+  --dl-space-space-sixunits: 6rem;
+  --dl-color-applegreen-deep: #638e1eff;
+  --dl-color-applegreen-main: #82bb27ff;
+  --dl-radius-radius-radius1: 1rem;
+  --dl-radius-radius-radius5: 0.5rem;
+  --dl-space-space-fourunits: 4rem;
+  --dl-color-applegreen-light: #9ada2eff;
+  --dl-radius-radius-radius40: 40px;
+  --dl-radius-radius-radius75: 0.75rem;
+  --dl-size-size-unitandahalf: 1.5rem;
+  --dl-space-space-doubleunit: 2rem;
+  --dl-space-space-tripleunit: 3rem;
+  --dl-space-space-twelveunits: 12rem;
+  --dl-size-size-triplequarterunit: 0.75rem;
+  --dl-space-space-unitandahalfunit: 1.5rem;
+  --dl-space-space-triplequarterunit: 0.75rem;
+}
+/* Start reset */
+html {
+  font-size: 1rem;
+  line-height: 1.15;
+  scroll-behavior: smooth !important;
+}
+
+* {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.625;
+  color: var(--dl-color-secondary-400);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+li,
+ul,
+pre,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+blockquote,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: transparent;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focus,
+[type="button"]:-moz-focus,
+[type="reset"]:-moz-focus,
+[type="submit"]:-moz-focus {
+  outline: 1px dotted ButtonText;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+input {
+  padding: 2px 4px;
+}
+
+img {
+  display: block;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* End reset */
+
+.layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.page {
+  width: 100%;
+  min-height: 80vh;
+}
+
+.list-item {
+  display: list-item;
+}
+
+.Large {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: -0.025rem;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.animate-gradient {
+  animation: textClip 2s linear infinite;
+  background-clip: border-box;
+  background-size: 200% auto;
+  text-fill-color: transparent;
+  background-image: linear-gradient(-225deg, #005d63 0%, #82bb27 50%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.HeadingOne {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: none;
+  text-decoration: none;
+}
+.HeadingTwo {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: none;
+  text-decoration: none;
+}
+.waves {
+  top: auto;
+  right: 0px;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+}
+
+.bottomWave {
+  left: auto;
+  bottom: -5px;
+}
+
+.topWave {
+  top: -5px;
+  left: auto;
+  bottom: auto;
+}
+/* Edit ready Components styles */
+
+.p-accordion .p-accordion-header:not(.p-disabled) a.p-accordion-header-link:focus {
+  box-shadow: none;
+}
+
+/* Slide animation */
+.slide-enter {
+  opacity: 0;
+  transform: translateY(-50%);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 300ms ease-in-out;
+}
+
+.slide-exit {
+  opacity: 1;
+  height: 309px;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transform: translateY(-50%);
+  transition: all 300ms ease-in-out;
+}
+
+/*animations*/
+@keyframes textClip {
+  to {
+    background-position: 200% center;
+  }
+}

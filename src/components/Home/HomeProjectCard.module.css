@@ -1,0 +1,162 @@
+.CardWTempBackground {
+  width: 100%;
+  background-size: cover;
+  background-image: linear-gradient(
+      90deg,
+      rgba(44, 62, 80, 0.32) 1%,
+      rgba(0, 93, 99, 0.45) 100%
+    ),
+    url("https://images.unsplash.com/photo-1494949649109-ecfc3b8c35df?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDEyfHxzY2hvb2x8ZW58MHx8fHwxNjcxMzY1MDcz&ixlib=rb-4.0.3&h=1500");
+}
+
+.projectsCard {
+  width: 30%;
+  height: 25rem;
+  display: flex;
+  position: relative;
+  box-shadow: 0 8px 26px -4px hsla(0, 0%, 8%, 0.15),
+    0 8px 9px -5px hsla(0, 0%, 8%, 0.06) !important;
+  transition: 0.3s;
+  align-items: center;
+  padding-top: var(--dl-space-space-sixunits);
+  padding-left: var(--dl-space-space-fourunits);
+  border-radius: var(--dl-radius-radius-radius1);
+  margin-bottom: 50px;
+  padding-right: var(--dl-space-space-fourunits);
+  flex-direction: column;
+  padding-bottom: var(--dl-space-space-fourunits);
+  background-size: cover;
+  justify-content: center;
+  background-position: center;
+}
+
+.projectsCard:hover {
+  transform: scale(1.04);
+}
+
+.empty {
+  top: 0px;
+  left: 0px;
+  right: auto;
+  width: 100%;
+  bottom: auto;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.5;
+  transition: all 0.2s;
+  border-radius: var(--dl-radius-radius-radius1);
+}
+.CardWTempBackground:hover .empty {
+  opacity: 1;
+}
+
+.btn {
+  scale: 0;
+  transition: all 0.3s;
+}
+.CardWTempBackground:hover .btn {
+  scale: 1;
+}
+.textWrapper {
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.companyName {
+  color: var(--dl-color-gray-800);
+  font-size: 0.7rem;
+  font-weight: 200;
+  line-height: 1.5;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.projectName {
+  color: var(--dl-color-applegreen-main);
+  max-width: 200px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: var(--dl-space-space-unit);
+  text-transform: uppercase;
+}
+
+.listContainer {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 200px;
+}
+
+.list {
+  width: 100%;
+  margin: 1em 0px 1em 0px;
+  display: block;
+  padding: 0px 0px 0px 1.5rem;
+  list-style-position: outside;
+  color: var(--dl-color-secondary-100);
+  font-size: 0.8rem;
+  font-weight: 400;
+  list-style-type: disc;
+}
+
+.listItem {
+  display: list-item;
+}
+
+.w100 {
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .CardWTempBackground {
+    width: 100%;
+  }
+
+  .projectsCard {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .CardWTempBackground {
+    background-size: cover;
+  }
+
+  .projectName {
+    color: var(--dl-color-gray-white);
+  }
+}
+
+@media (max-width: 479px) {
+  .CardWTempBackground {
+    padding-left: var(--dl-space-space-fourunits);
+    padding-right: var(--dl-space-space-fourunits);
+  }
+
+  .projectsCard {
+    padding-left: var(--dl-space-space-fourunits);
+    padding-right: var(--dl-space-space-fourunits);
+  }
+
+  .companyName {
+    color: var(--dl-color-secondary-100);
+    font-size: 0.6rem;
+  }
+
+  .projectName {
+    color: var(--dl-color-applegreen-main);
+    font-size: 1.1rem;
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .listContainer {
+    padding-left: var(--dl-space-space-unit);
+  }
+}

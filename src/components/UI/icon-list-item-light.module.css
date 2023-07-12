@@ -1,0 +1,44 @@
+.IconWrapper {
+  width: 100%;
+  height: auto;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+  cursor: default;
+}
+
+.IconWrapperInner {
+  fill: var(--dl-color-gray-white);
+  color: var(--dl-color-gray-white);
+  display: flex;
+  transition: 0.3s;
+  align-items: center;
+}
+
+.IconWrapperInner:hover {
+  fill: var(--dl-color-gray-black);
+  color: var(--dl-color-gray-black);
+}
+
+.icon {
+  fill: inherit;
+  width: var(--dl-size-size-triplequarterunit);
+  height: var(--dl-size-size-triplequarterunit);
+  margin-top: 0px;
+  margin-right: var(--dl-space-space-halfunit);
+  margin-bottom: 0px;
+}
+
+.iconText {
+  color: inherit;
+  width: 100%;
+  font-size: .9rem;
+  text-align: left;
+  cursor: default;
+}
+
+@media(max-width: 991px) {
+  .iconText {
+    font-size: 0.8rem;
+  }
+}

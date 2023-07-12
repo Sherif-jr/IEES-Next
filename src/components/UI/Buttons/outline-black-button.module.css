@@ -1,0 +1,33 @@
+.buttonContainer {
+  display: flex;
+  position: relative;
+}
+
+.button {
+  color: var(--dl-color-secondary-700);
+  background-color: var(--dl-color-gray-white);
+  cursor: pointer;
+  outline: none;
+  min-width: 150px;
+  transition: 0.3s;
+  padding-top: var(--dl-space-space-triplequarterunit);
+  padding-left: var(--dl-space-space-fourunits);
+  border-radius: var(--dl-radius-radius-radius75);
+  padding-right: var(--dl-space-space-fourunits);
+  padding-bottom: var(--dl-space-space-triplequarterunit);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.025rem;
+  text-transform: uppercase;
+  display: inline-block;
+  border-color: var(--dl-color-secondary-400);
+  border-width: 1px;
+
+
+}
+
+.button:hover {
+  transform: scale(1.02);
+}
