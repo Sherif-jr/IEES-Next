@@ -1,17 +1,14 @@
 "use client";
 import React, { useRef } from "react";
 import { InputText } from "primereact/inputtext";
-import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
-import { classNames } from "primereact/utils";
-import { Chips } from "primereact/chips";
 import { Dropdown } from "primereact/dropdown";
-
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
+import { submitContactForm } from "@/libs/actions";
 
 const countryOptionTemplate = (option) => {
   return (
@@ -22,8 +19,6 @@ const countryOptionTemplate = (option) => {
         className={`mr-2 rounded aspect-[1.3/1] h-auto w-auto`}
         width={20}
         height={20}
-
-        //   sizes="10vh"
       />
 
       <div>{`(${option.code})`}</div>
@@ -61,40 +56,58 @@ const ContactForm = ({ countries }) => {
           phone: Yup.string()
             .min(9, "This is not a valid number!")
             .max(20, "This is not a valid number!")
-            .required(),
-          countryCode: Yup.object().required(),
-          email: Yup.string().email().required("The email is required!"),
-          company: Yup.string().trim().max(100, "Too long name!").required(),
-          notes: Yup.string().label("Partners images links"),
+            .required()
+            .label("Phone"),
+          countryCode: Yup.object().required().label("Code"),
+          email: Yup.string()
+            .email()
+            .required("The email is required!")
+            .label("Email"),
+          company: Yup.string()
+            .trim()
+            .max(100, "Too long name!")
+            .required()
+            .label("Company name"),
+          notes: Yup.string().label("Notes"),
         })}
-        // onSubmit={async (
-        // 	values,
-        // 	{ setErrors, setStatus, setSubmitting }
-        // ) => {
-        // 	try {
-        // 		const docRef = doc(db, '/website-content/LIVE/content', 'home');
-        // 		await setDoc(docRef, values);
-        // 		setStatus({ success: true });
-        // 		setNotification(true);
-        // 		setSubmitting(false);
-        // 		setNotification({
-        // 			show: true,
-        // 			varient: 'success',
-        // 			title: 'Success',
-        // 			message: 'Your data was saved successfully!'
-        // 		});
-        // 	} catch (err) {
-        // 		setStatus({ success: false });
-        // 		setErrors({ submit: err.message });
-        // 		setSubmitting(false);
-        // 		setNotification({
-        // 			show: true,
-        // 			varient: 'error',
-        // 			title: 'Task Faild',
-        // 			message: err.message
-        // 		});
-        // 	}
-        // }}
+        onSubmit={async (
+          values,
+          { setErrors, setStatus, setSubmitting, resetForm }
+        ) => {
+          const data = {
+            fullName: values.name,
+            email: values.email,
+            phoneNumber: values.phone,
+            countryCode: values.countryCode.code,
+            country: values.countryCode.name,
+            company: values.company,
+            notes: values.notes,
+          };
+          try {
+            const response = await submitContactForm(data);
+            if (response?.success) {
+              setStatus({ success: true });
+              toast.current.show({
+                severity: "success",
+                summary: "Form Submitted!",
+                detail: `Thank you ${response.firstName} we will get back to you soon.`,
+              });
+              setSubmitting(false);
+              resetForm();
+            } else {
+              throw new Error("Something went wrong!");
+            }
+          } catch (err) {
+            setStatus({ success: false });
+            setErrors({ submit: err.message });
+            setSubmitting(false);
+            toast.current.show({
+              severity: "error",
+              summary: "Something went wrong!",
+              detail: `Check your internet or try to resubmit later,`,
+            });
+          }
+        }}
       >
         {({
           errors,
@@ -159,7 +172,7 @@ const ContactForm = ({ countries }) => {
               <small className="p-error block">
                 {Boolean(touched.phone && errors.phone) &&
                 Boolean(touched.countryCode && errors.countryCode)
-                  ? `${errors.phone} && ${errors.countryCode}`
+                  ? `${errors.phone} & ${errors.countryCode}`
                   : (Boolean(touched.phone && errors.phone) && errors.phone) ||
                     (Boolean(touched.countryCode && errors.countryCode) &&
                       errors.countryCode) ||

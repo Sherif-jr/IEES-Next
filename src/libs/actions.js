@@ -1,8 +1,11 @@
 "use server";
+import { sendEmail } from "./emailer";
 import { submitContact } from "./firebase";
+import { render } from "@react-email/render";
+import DefaultWelcomeTemplate from "@/components/emails/DefaultWelcomeTemplate";
 export async function submitContactForm({
   fullName,
-  number,
+  email,
   phoneNumber,
   countryCode,
   country,
@@ -20,8 +23,14 @@ export async function submitContactForm({
       company,
       notes,
     });
-    return { success: true, message: "", first };
+    sendEmail({
+      to: email,
+      subject: "We will contact you!",
+      html: render(DefaultWelcomeTemplate({ userFirstname: firstName })),
+    });
+    return { success: true, message: "submitted", firstName };
   } catch (err) {
-    return { success: true, message: err.message };
+    console.log(err.message);
+    return { success: false, message: err.message };
   }
 }

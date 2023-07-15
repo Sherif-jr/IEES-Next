@@ -1,10 +1,14 @@
 import ContactCard from "@/components/Contact/ContactCard";
+import { getContactDetails } from "@/libs/firebase";
 
 export default async function contact() {
-  const countries = await getCountries();
+  const [countries, contactDetails] = await Promise.all([
+    getCountries(),
+    getContactDetails(),
+  ]);
   return (
     <main className="w-full max-w-[1320px] md:py-24 md:px-12 pt-12 pb-8 px-8 m-auto">
-      <ContactCard countries={countries} />
+      <ContactCard countries={countries} contactDetails={contactDetails} />
     </main>
   );
 }
@@ -19,7 +23,6 @@ export const getCountries = async () => {
     const countries = data.map((country) => {
       if (!excluded.includes(country.name.common) && country.idd.root !== "") {
         return {
-          letterGroup: country.name.common.substring(0, 1).toUpperCase(),
           name: country.name.common,
           short: country.cioc,
           flag: country.flags.png,

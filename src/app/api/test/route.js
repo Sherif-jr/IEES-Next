@@ -1,11 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
+import { render } from "@react-email/render";
+import DefaultWelcomeTemplate from "@/components/emails/DefaultWelcomeTemplate";
+import { sendEmail } from "@/libs/emailer";
 export async function POST() {
-  // const body = req.body;
-  // console.log(body);
-  // if (!body || !body.message) {
-  //   // Sends a HTTP bad request error code
-  //   return res.status(400).json({ data: "First or last name not found" });
-  // }
-  return NextResponse.json({ data: "hello world" });
-  // res.status(200).json({ data: "hello world" });
+  await sendEmail({
+    to: "abdelrhman.sh.ahmed@gmail.com",
+    subject: "First Email using NodeJs!!",
+    html: render(DefaultWelcomeTemplate({ userFirstname: "Abdelrhman" })),
+  });
+
+  return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
 }
+// export async function POST(){
+//   return NextResponse.json(body)
+// }

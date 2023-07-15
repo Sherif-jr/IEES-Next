@@ -6,16 +6,15 @@ import Image from "next/image";
 
 const ContactDetail = ({ href, primeIcon, text }) => {
   return (
-    <div className=" flex items-start my-4">
+    <Link href={href || "#"} className=" flex items-start my-4">
       <i className={`pi ${primeIcon} fill-white w-6 h-6 mr-4`}></i>
-      <Link href={href || "#"} className="opacity-80 text-sm">
-        {text}
-      </Link>
-    </div>
+      <p className="opacity-80 text-sm">{text}</p>
+    </Link>
   );
 };
 
-const ContactCard = ({ countries }) => {
+const ContactCard = ({ countries, contactDetails }) => {
+  console.log(contactDetails);
   return (
     <div className="flex flex-col lg:flex-row w-full shadow-Card rounded-2xl bg-white">
       <div className="pt-8 flex flex-col items-start md:py-16 px-8">
@@ -42,34 +41,46 @@ const ContactCard = ({ countries }) => {
           </p>
           <div className="flex flex-col w-full my-8 items-start">
             <ContactDetail
-              href="tel:+201095722947"
+              href={contactDetails.phone ? `tel:${contactDetails.phone}` : ""}
               primeIcon="pi-phone"
               text="+201095722947"
             />
             <ContactDetail
-              href="mailto:sales@iees-co.com?subject="
+              href={
+                contactDetails.email
+                  ? `mailto:${contactDetails?.email}?subject=`
+                  : ""
+              }
               primeIcon="pi-envelope"
               text="sales@iees-co.com"
             />
             <ContactDetail
-              href=""
+              href={contactDetails.mapLink || ""}
               primeIcon="pi-map-marker"
               text="18 St. Zahrah Al Madaen, Joseph Tito, Second floor, Al Nozha, Cairo, Egypt"
             />
           </div>
           <div className="flex items-start w-[200px]">
-            <Link href={`#`}>
-              <i className="pi pi-linkedin fill-white w-6 h-6 mr-7" />
-            </Link>
-            <Link href={`#`}>
-              <i className="pi pi-twitter fill-white w-6 h-6 mr-7" />
-            </Link>
-            <Link href={`#`}>
-              <i className="pi pi-facebook fill-white w-6 h-6 mr-7" />
-            </Link>
-            <Link href={`#`}>
-              <i className="pi pi-instagram fill-white w-6 h-6 mr-7" />
-            </Link>
+            {contactDetails.linkedIn && (
+              <Link href={contactDetails.linkedIn}>
+                <i className="pi pi-linkedin fill-white w-6 h-6 mr-7" />
+              </Link>
+            )}
+            {contactDetails.twitter && (
+              <Link href={contactDetails.twitter}>
+                <i className="pi pi-twitter fill-white w-6 h-6 mr-7" />
+              </Link>
+            )}
+            {contactDetails.facebook && (
+              <Link href={contactDetails.facebook}>
+                <i className="pi pi-facebook fill-white w-6 h-6 mr-7" />
+              </Link>
+            )}
+            {contactDetails.instagram && (
+              <Link href={contactDetails.instagram}>
+                <i className="pi pi-instagram fill-white w-6 h-6 mr-7" />
+              </Link>
+            )}
           </div>
         </div>
       </div>
