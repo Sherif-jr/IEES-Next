@@ -1,5 +1,6 @@
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "public/css/primeTheme.css";
 import "./globals.css";
 import "primeicons/primeicons.css";
 import { Open_Sans } from "next/font/google";

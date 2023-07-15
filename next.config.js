@@ -14,7 +14,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+      },
     ],
+  },
+  experimental: {
+    serverActions: true,
   },
 };
 

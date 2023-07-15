@@ -1,11 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {
+  addDoc,
   collection,
   doc,
   getDoc,
   getDocs,
   getFirestore,
+  setDoc,
 } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
@@ -90,6 +92,12 @@ const getAllProjects = async () => {
   return projects;
 };
 
+//========================================Contact Submit==============================//
+const submitContact = async (data) => {
+  const collectionRef = collection(db, "website-content/LIVE", "contactForm");
+  await addDoc(collectionRef, data);
+};
+
 export {
   getHome,
   getContactDetails,
@@ -98,6 +106,7 @@ export {
   getAllServices,
   getAllServicesCards,
   getAllProjects,
+  submitContact,
 };
 
 // export const otherService = async (serviceName) => {

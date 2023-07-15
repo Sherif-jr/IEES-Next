@@ -24,11 +24,6 @@ export default async function projects() {
             {projects.map((project) => (
               <ProjectCard key={project.id} projectData={project.data} />
             ))}
-            {/* <ProjectCard project={projects[0]} />
-            <ProjectCard project={projects[0]} />
-            <ProjectCard project={projects[0]} />
-            <ProjectCard project={projects[0]} />
-            <ProjectCard project={projects[0]} /> */}
           </div>
         </div>
       </section>

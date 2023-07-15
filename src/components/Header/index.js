@@ -1,5 +1,5 @@
 "use client";
-//ToDo make fully static
+
 import { useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,7 +22,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/UI/hover-card";
-import { Divider } from "primereact/divider";
 
 const Header = (props) => {
   const pathName = usePathname();
@@ -42,7 +41,7 @@ const Header = (props) => {
           <Link href="/" className={styles.headerNavlink}>
             <div className={styles.headerContainer1}>
               <Image
-                alt={props.image_alt}
+                alt="IEES logo"
                 src={Logo}
                 className={styles.headerImage}
               />
@@ -114,7 +113,7 @@ const Header = (props) => {
                       </Link>
                     </li>
                     <li className={`${styles.headerDropdown} list-item`}>
-                      <Link href="/services/design-management">
+                      <Link href="/services/design-services">
                         <div className={styles.headerDropdownListItem}>
                           <span className={styles.headerDropdownListItemText}>
                             Design Services
