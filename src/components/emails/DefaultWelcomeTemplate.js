@@ -18,8 +18,8 @@ export const DefaultWelcomeTemplate = ({ userFirstname }) => (
       <Container style={container}>
         <Img
           src={`https://res.cloudinary.com/dhdonsil5/image/upload/v1689454906/IEES/Brand-Assets/abmibydzc628s4aebqwt.png`}
-          width="150"
-          height="150"
+          width="142"
+          height="70"
           alt="IEES logo"
           style={logo}
         />
