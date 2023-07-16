@@ -8,6 +8,7 @@ import {
   getDocs,
   getFirestore,
   setDoc,
+  Timestamp,
 } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
@@ -95,7 +96,8 @@ const getAllProjects = async () => {
 //========================================Contact Submit==============================//
 const submitContact = async (data) => {
   const collectionRef = collection(db, "website-content/LIVE", "contactForm");
-  await addDoc(collectionRef, data);
+  const now = Timestamp.fromDate(new Date());
+  await addDoc(collectionRef, { ...data, timeAdded: now });
 };
 
 export {
