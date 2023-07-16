@@ -23,7 +23,7 @@ export async function submitContactForm({
       company,
       notes,
     });
-    sendEmail({
+    await sendEmail({
       to: email,
       subject: "We will contact you!",
       html: render(DefaultWelcomeTemplate({ userFirstname: firstName })),
