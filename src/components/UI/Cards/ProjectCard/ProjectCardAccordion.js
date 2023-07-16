@@ -7,17 +7,17 @@ function ProjectAccordion({ projectName, summary, details, imgsLinks }) {
       <AccordionTab
         headerClassName=""
         header="Summary"
-        disabled={Boolean(!summary)}
+        disabled={!Boolean(summary)}
       >
         <p className="m-0">{summary}</p>
       </AccordionTab>
-      <AccordionTab header="Details" disabled={Boolean(!details)}>
+      <AccordionTab header="Details" disabled={!Boolean(details)}>
         <p className="m-0">{details}</p>
       </AccordionTab>
       <AccordionTab
         header="Gallery"
         pt={{ content: { style: { padding: 0 } } }}
-        disabled={Boolean(!imgsLinks)}
+        disabled={!Boolean(imgsLinks && imgsLinks.length > 0)}
       >
         <ProjectCardCarousel imgsLinks={imgsLinks} projectName={projectName} />
       </AccordionTab>

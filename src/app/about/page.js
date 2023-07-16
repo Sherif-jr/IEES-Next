@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 import topWave from "public/Assets/home/top.svg";
 import bottomWave from "public/Assets/home/bottom.svg";
-// import contactImage from "public/Assets/home/contact-image.png";
 import yogaImage from "public/Assets/about/yoga.png";
 import officeImage from "public/Assets/about/office.png";
 import visionImage from "public/Assets/about/vision.jpg";
@@ -204,12 +203,13 @@ export default async function about() {
       */}
       <section
         id="services-section"
-        className="overflow-hidden w-full flex items-center justify-center py-24 bg-cover bg-center bg-gradient-to-t from-[#005d63b3] to-[#82bb27b5] relative"
+        className="overflow-hidden w-full flex items-center justify-center py-24  relative"
       >
+        <div className="absolute w-full h-full bg-gradient-to-t from-[#005d63b3] to-[#82bb27b5] z-[-2] " />
         <Image
           alt="image"
           src={pattern2}
-          className="top-auto left-0 right-0 bottom-auto w-full h-full absolute object-cover z-[-1]"
+          className="top-auto left-0 right-0 bottom-auto w-full h-full absolute object-cover z-[-3]"
         />
         <div className="flex flex-col xl:flex-row items-center gap-5 p-9">
           {servicesCards.map((card) => (
