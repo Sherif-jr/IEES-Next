@@ -6,6 +6,7 @@ import "primeicons/primeicons.css";
 import { Open_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/UI/Buttons/ScrollToTop";
 //icons
 // import "primeicons/primeicons.css";
 const openSans = Open_Sans({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <div className="layout">
           <Header />
           <div className="page">{children}</div>
+          <ScrollToTop />
           <Footer />
         </div>
       </body>
