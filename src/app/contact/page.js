@@ -1,6 +1,12 @@
 import ContactCard from "@/components/Contact/ContactCard";
 import { getContactDetails } from "@/libs/firebase";
 
+export const metadata = {
+  title: "Contact Us - IEES",
+  description:
+    "We provide you the best in market engineering services. No more headaches or delays. Our services are tailored for your needs. Pay only for what you need and expand even more at any time.",
+};
+
 export default async function contact() {
   const [countries, contactDetails] = await Promise.all([
     getCountries(),

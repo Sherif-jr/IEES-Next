@@ -18,7 +18,7 @@ const openSans = Open_Sans({
 export const metadata = {
   title: "IEES",
   description:
-    "We provide you the best in market engineering services. No more headaches or delays. Our services are tailored for your needs. Pay only for what you need and expand even more at any time.",
+    "Start now with our all-in-one solution for construction projects and MEP services or you can pick the service you need and enjoy a headache-free, discipline and professional workflow for your project.",
 };
 
 export default function RootLayout({ children }) {

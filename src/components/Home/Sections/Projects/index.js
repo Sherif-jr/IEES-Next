@@ -21,7 +21,7 @@ export default function ProjectsSection({ projects }) {
         <br></br>
       </span>
       <div className={styles.CardsContainer}>
-        {sortedProjects.map((project) => (
+        {sortedProjects.slice(0, 5).map((project) => (
           <HomeProjectCard
             key={project.id}
             projectName={project.data.name}
@@ -30,54 +30,6 @@ export default function ProjectsSection({ projects }) {
             bgLink={project.data.imgsLinks[0]}
           />
         ))}
-        
-        {/* <HomeProjectCard
-          projectName="Universities of Canada"
-          service1Provided="Building “C” MEP Systems"
-          service2Provided="Main Electrical Network"
-        />
-        <HomeProjectCard
-          companyName="EGYGAB for Education Development"
-          projectName="Egyptian Language School, Shorouk Project"
-          service1Provided="MEP design"
-          service2Provided="Project Management"
-        />
-        <HomeProjectCard
-          companyName="Katameya Company for developing Education"
-          projectName="Egyptian Language School New Cairo"
-          service1Provided="Maintenance Management"
-          service2Provided="Maintenance Supervision"
-        />
-        <HomeProjectCard
-          companyName="6th October Company for developing Education"
-          projectName="Egyptian Language School 6th October"
-          service1Provided="Maintenance Management"
-          service2Provided="Maintenance Supervision"
-        />
-        <HomeProjectCard
-          companyName="Alexandria Company for developing Education"
-          projectName="Egyptian Language School Alexandria"
-          service1Provided="Maintenance Management"
-          service2Provided="Maintenance Supervision"
-        />
-        <HomeProjectCard
-          companyName="Alexandria Company for developing Education"
-          projectName="Egyptian Language School Alexandria"
-          service1Provided="Maintenance Management"
-          service2Provided="Maintenance Supervision"
-        />
-        <HomeProjectCard
-          companyName="Alexandria Company for developing Education"
-          projectName="Egyptian Language School Alexandria"
-          service1Provided="Maintenance Management"
-          service2Provided="Maintenance Supervision"
-        />
-        <HomeProjectCard
-          companyName="Alexandria Company for developing Education"
-          projectName="Egyptian Language School Alexandria"
-          service1Provided="Maintenance Management"
-          service2Provided="Maintenance Supervision"
-        /> */}
       </div>
     </section>
   );

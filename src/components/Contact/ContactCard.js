@@ -14,7 +14,6 @@ const ContactDetail = ({ href, primeIcon, text }) => {
 };
 
 const ContactCard = ({ countries, contactDetails }) => {
-  console.log(contactDetails);
   return (
     <div className="flex flex-col lg:flex-row w-full shadow-Card rounded-2xl bg-white">
       <div className="pt-8 flex flex-col items-start md:py-16 px-8">

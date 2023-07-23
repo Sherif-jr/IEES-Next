@@ -1,9 +1,14 @@
 import styles from "./projects.module.css";
 import ProjectCard from "@/components/UI/Cards/ProjectCard";
 import { getAllProjects } from "@/libs/firebase";
+
+export const metadata = {
+  title: "Projects - IEES",
+  description: "YOUR VISION WILL BECOME A REALITY.",
+};
+
 export default async function projects() {
   const projects = await getAllProjects();
-  console.log(projects[0].data);
   return (
     <>
       <div className={styles.projectsHero}>

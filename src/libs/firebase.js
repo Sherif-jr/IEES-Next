@@ -7,8 +7,10 @@ import {
   getDoc,
   getDocs,
   getFirestore,
+  query,
   setDoc,
   Timestamp,
+  where,
 } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
@@ -86,7 +88,8 @@ const getService = async (id) => {
 const getAllProjects = async () => {
   let projects = [];
   const collectionRef = collection(db, "website-content/LIVE", "projects");
-  const res = await getDocs(collectionRef);
+  const q = query(collectionRef, where("settings.published", "==", true));
+  const res = await getDocs(q);
   res.forEach((project) => {
     projects.push({ id: project.id, data: project.data() });
   });
@@ -95,7 +98,7 @@ const getAllProjects = async () => {
 
 //========================================Contact Submit==============================//
 const submitContact = async (data) => {
-  const collectionRef = collection(db, "website-content/LIVE", "contactForm");
+  const collectionRef = collection(db, "contactForm");
   const now = Timestamp.fromDate(new Date());
   await addDoc(collectionRef, { ...data, timeAdded: now });
 };
