@@ -21,7 +21,7 @@ const SolutionItem = ({ item }) => {
       {item.children &&
         item.children.length > 0 &&
         item.children.map((sol, i) => (
-          <Item key={`${sol.substring(4, 8)}>${i}`} sub text={item.content} />
+          <Item key={`${sol.substring(4, 8)}>${i}`} sub text={sol} />
         ))}
     </>
   );
