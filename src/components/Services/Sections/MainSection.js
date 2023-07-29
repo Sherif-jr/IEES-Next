@@ -10,11 +10,11 @@ const MainSection = ({ mainSection, firstSectionId, pageId }) => {
       style={{
         backgroundImage: `linear-gradient(113deg, rgba(0, 54, 57, 0.7) 8%, rgba(50, 74, 10, 0.8) 94%), url(${mainSection?.bgLink})`,
       }}
-      className="h-[100vh] w-full px-6 py-8 sm:px-8 md:p-12 min-h-[80vh] bg-center bg-cover bg-no-repeat relative flex flex-col items-center justify-center"
+      className="w-full px-6 py-8 sm:px-8 md:p-12 min-h-[100vh] bg-center bg-cover bg-no-repeat relative flex flex-col items-center justify-center"
     >
       <div className="flex flex-col items-center max-w-[1350px] py-8 mt-8 sm:mt-24 lg:mt-0">
         <FadeSlide distance="sm">
-          <h1 className="text-[2.4rem] sm:text-[2.6rem] text-center lg:text-start lg:text-5xl font-bold text-white mb-12 animate__fadeInUp animate__animated">
+          <h1 className="text-[2.4rem] sm:text-[2.6rem] text-center lg:text-start lg:text-5xl font-bold text-white mb-8 sm:mb-12 animate__fadeInUp animate__animated">
             <span className="text-[#82bb27ff]">{title[0][0]}</span>
             <span>
               {title[0].substring(1)}
@@ -48,12 +48,12 @@ const MainSection = ({ mainSection, firstSectionId, pageId }) => {
           </span>
         </Fade>
         <div className="flex flex-col items-center sm:flex-row gap-4">
-          <div className="flex relative">
+          <div className="flex relative w-full sm:w-auto">
             <FadeSlide
               delay={0.1}
               direction="down"
               distance={50}
-              className="inline-block"
+              className="inline-block w-full"
             >
               <Link
                 href={`#${firstSectionId}`}
@@ -68,11 +68,11 @@ const MainSection = ({ mainSection, firstSectionId, pageId }) => {
               delay={0.4}
               direction="down"
               distance={50}
-              className="inline-block"
+              className="block"
             >
               <Link
                 href="#other-services"
-                className="uppercase no-underline px-8 text-center w-full text-white bg-transparent py-4 sm:px-11 hover:text-[#005d63ff] rounded border hover:bg-white button"
+                className="inline-block uppercase no-underline px-8 text-center w-full text-white bg-transparent py-4 sm:px-11 hover:text-[#005d63ff] rounded border hover:bg-white button"
               >
                 OTHER SERVICES
               </Link>

@@ -20,7 +20,7 @@ const ContactCard = ({ countries, contactDetails }) => {
       <FadeSlide
         distance="sm"
         delay={0.3}
-        className="pt-8 flex flex-col items-start md:py-16 px-8"
+        className="py-8 flex flex-col items-start md:py-16 px-8"
       >
         <h3 className="text-[#344767ff] mb-4 ">Just afew fields to fill...</h3>
         <span className="mb-8 text-xl">

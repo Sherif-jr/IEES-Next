@@ -13,7 +13,7 @@ export default async function contact() {
     getContactDetails(),
   ]);
   return (
-    <main className="w-full max-w-[1320px] md:py-24 md:px-12 pt-12 pb-8 px-8 m-auto">
+    <main className="w-full max-w-[1320px] md:py-24 md:px-12 pt-24 pb-8 px-8 m-auto">
       <ContactCard countries={countries} contactDetails={contactDetails} />
     </main>
   );

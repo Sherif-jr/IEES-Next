@@ -6,7 +6,7 @@ const StageCard = ({ problems, solutions, content }) => {
   return (
     <div
       //   bgColorRGBA={problems ? "255, 255, 255, 0.2" : "255, 255, 255, 0.8"}
-      className={` rounded-3xl h-[350px] w-[400px] flex flex-col items-center justify-start mb-8 p-8  lg:px-4 md:p-4 ${
+      className={` rounded-3xl h-auto sm:h-[350px] w-[350px] sm:w-[400px] flex flex-col items-center justify-start mb-8 p-8  lg:px-4 md:p-4 ${
         problems ? "bg-[#ffffff33]" : "bg-[#ffffffcc]"
       } `}
     >

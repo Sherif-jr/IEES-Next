@@ -41,7 +41,7 @@ export default async function service({ params }) {
           key={i}
           stage={stage}
           index={i + 1}
-          id={i === 1 ? "first-stage" : undefined}
+          id={i === 0 ? "first-stage" : undefined}
         />
       ))}
       <OtherServicesSection cardsData={servicesCards} />

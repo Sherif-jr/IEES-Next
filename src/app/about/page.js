@@ -77,19 +77,19 @@ export default async function about() {
       */}
       <section className="overflow-hidden flex flex-col w-full relative items-center bg-gradient-to-br from-[#005d63] to-[#82bb27]">
         <div className="py-24 sm:py-48 md:py-60 px-8 lg:px-12 flex justify-center items-center xl:justify-between xl:items-start z-[1] max-w-[1320px]">
-          <div className="flex flex-col items-center lg:item h-auto w-1/2">
-            <div className="flex m-w-[600px] items-start mr-0 lg:mr-12 flex-col">
+          <div className="flex flex-col items-center lg:item h-auto w-full sm:px-4 md:w-1/2">
+            <div className="flex sm:m-w-[600px] items-start mr-0 lg:mr-12 flex-col">
               <p className="mr-0 flex flex-col max-w-[600px] items-start sm:mr-12 ">
                 <span className="font-normal text-base text-[#d2d6daff] opacity-80 mb-4">
                   PAST IS THE BEGINNING OF THE FUTURE
                 </span>
                 <br></br>
               </p>
-              <h3 className="uppercase w-[382px] text-[#ffffff] font-bold md:font-normal text-3xl mb-12 ">
+              <h3 className="uppercase max-w-[382px] text-[#ffffff] font-bold md:font-normal text-3xl mb-12 ">
                 <span>IEES HISTORY</span>
                 <br></br>
               </h3>
-              <p className="text-[#ffffff] text-xl md:text-base opacity-80 mb-8">
+              <p className="text-[#ffffff] text-base sm:text-xl md:text-base opacity-80 mb-8">
                 After a long experience in Mechanical, Electrical, and Plumbing
                 (MEP) projects in different phases (Designing, Tendering,
                 Contracting, Construction, operating, maintenance, developing,
@@ -99,7 +99,7 @@ export default async function about() {
                 Services Company IEES) that depends on the market experience and
                 updated science and research to participate in:
               </p>
-              <ul className="text-xl md:text-base -mt-4 md:m-0 pl-8 md:p-0 text-white list-disc list-outside block w-full">
+              <ul className="text-base md:text-base -mt-4 md:m-0 pl-8 md:p-0 text-white list-disc list-outside block w-full">
                 <li className="list-item">
                   <span>
                     Developing optimized MEP designs (Design Services).
