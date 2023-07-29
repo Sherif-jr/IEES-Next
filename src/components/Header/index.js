@@ -38,7 +38,11 @@ const Header = (props) => {
         className={`${styles.headerNav} animate__fadeInDown animate__animated`}
       >
         <div className={styles.headerContainer}>
-          <Link href="/" className={styles.headerNavlink}>
+          <Link
+            href="/"
+            className={styles.headerNavlink}
+            aria-description="logo"
+          >
             <div className={styles.headerContainer1}>
               <Image
                 alt="IEES logo"

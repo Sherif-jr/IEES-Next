@@ -13,7 +13,7 @@
 
 .title {
   font-size: 2.25rem;
-  text-align: center;
+  text-align: start;
   font-weight: 700;
   line-height: 1.3;
   text-transform: none;
@@ -21,11 +21,12 @@
   background-image: linear-gradient(310deg, #005d63, #82bb27);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
 }
 
 .title2 {
   color: var(--dl-color-secondary-700);
-  text-align: center;
+  text-align: start;
   margin-bottom: var(--dl-space-space-unitandahalfunit);
 }
 
@@ -44,7 +45,7 @@
   align-items: flex-start;
   margin-bottom: var(--dl-space-space-unit);
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .controlsInner {
@@ -59,9 +60,9 @@
     width: 60%;
   }
 
-  .title {
-    letter-spacing: 6px;
-  }
+  /* .title {
+    letter-spacing: 3px;
+  } */
 
   .controls {
     min-width: 00px;
@@ -110,7 +111,7 @@
 @media (max-width: 479px) {
   .heroCard {
     width: 100%;
-    padding: var(--dl-space-space-unit);
+    padding: 2rem 2rem 1rem 2rem;
     align-self: center;
     margin-top: var(--dl-space-space-sixunits);
     justify-content: center;
@@ -118,10 +119,12 @@
 
   .title {
     font-size: 1.7rem;
+    text-align: center;
   }
 
   .title2 {
     font-size: 1rem;
+    text-align: center;
     align-self: center;
   }
 

@@ -28,7 +28,7 @@ export default async function Home() {
           <HomeCardMotion>
             <HomeCard
               title={home.title}
-              subTitle={home.subTitle}
+              subTitle={home.subtitle}
               paragraph={home.paragraph}
             />
           </HomeCardMotion>

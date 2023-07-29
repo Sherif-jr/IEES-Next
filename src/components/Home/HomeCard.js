@@ -11,7 +11,7 @@ const HomeCard = ({ title, subTitle, paragraph }) => {
     <Card className={styles.heroCard}>
       <HomeCardInnerFade>
         <h1 className={styles.title}>{title}</h1>
-        <h1 className={`${styles.title2} HeadingOne`}>{subTitle}</h1>
+        <h2 className={`${styles.title2} HeadingOne`}>{subTitle}</h2>
         <span className={styles.bodyText}>{paragraph}</span>
         <div className={styles.controls}>
           <div className={styles.controlsInner}>
