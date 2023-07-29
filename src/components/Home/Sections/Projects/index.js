@@ -1,6 +1,7 @@
 import React from "react";
 import HomeProjectCard from "../../HomeProjectCard";
 import styles from "./ProjectsSection.module.css";
+import MotionContainer from "@/components/motion/MotionContainer";
 
 export default function ProjectsSection({ projects }) {
   const sortedProjects = projects.sort(
@@ -20,7 +21,7 @@ export default function ProjectsSection({ projects }) {
         </span>
         <br></br>
       </span>
-      <div className={styles.CardsContainer}>
+      <MotionContainer staggerChildren={0.5} className={styles.CardsContainer}>
         {sortedProjects.slice(0, 5).map((project) => (
           <HomeProjectCard
             key={project.id}
@@ -30,7 +31,7 @@ export default function ProjectsSection({ projects }) {
             bgLink={project.data.imgsLinks[0]}
           />
         ))}
-      </div>
+      </MotionContainer>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import OutlineBlackButton from "../UI/Buttons/outline-black-button";
 import styles from "./HomeProjectCard.module.css";
+import FadeGrow from "../motion/FadeGrow";
 
 const HomeProjectCard = ({
   className,
@@ -10,7 +11,7 @@ const HomeProjectCard = ({
   bgLink,
 }) => {
   return (
-    <div
+    <FadeGrow
       className={`${styles.CardWTempBackground} ${styles.projectsCard} ${className}`}
       style={{
         backgroundImage: `linear-gradient(
@@ -56,7 +57,7 @@ const HomeProjectCard = ({
           />
         </Link>
       </div>
-    </div>
+    </FadeGrow>
   );
 };
 export default HomeProjectCard;

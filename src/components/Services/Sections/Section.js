@@ -1,6 +1,7 @@
 import React from "react";
 import StageCard from "../StageCard";
 import Image from "next/image";
+import FadeSlide from "@/components/motion/FadeSlide";
 
 const Section = ({ id, stage, index }) => {
   return (
@@ -24,14 +25,20 @@ const Section = ({ id, stage, index }) => {
           </p>
         </div>
         <div className="w-full gap-10 px-0 pt-8 max-h-[initial] sm:pt-4 justify-center flex flex-wrap md:pt-12 lg:p-4 items-center lg:justify-center  xl:p-8">
-          <div className="h-full flex flex-col items-center justify-start md:justify-center ">
-            {/* <ServicesTextCard problems dataArray={props.problems} /> */}
+          <FadeSlide
+            distance="sm"
+            disableFade
+            className="h-full flex flex-col items-center justify-start md:justify-center "
+          >
             <StageCard problems content={stage.problems} />
-          </div>
-          <div className="h-full flex flex-col items-center justify-start md:justify-center ">
-            {/* <ServicesTextCard solutions dataArray={props.solutions} /> */}
+          </FadeSlide>
+          <FadeSlide
+            distance="sm"
+            disableFade
+            className="h-full flex flex-col items-center justify-start md:justify-center "
+          >
             <StageCard solutions content={stage.solutions} />
-          </div>
+          </FadeSlide>
         </div>
       </div>
     </section>

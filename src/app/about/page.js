@@ -12,6 +12,7 @@ import pattern from "public/Assets/others/pattern.png";
 import pattern2 from "public/Assets/about/pattern2.svg";
 import { getAbout, getAllServicesCards } from "@/libs/firebase";
 import SerivceHoverCard from "@/components/UI/Cards/ServiceHoverCard";
+import Floating from "@/components/motion/Floating";
 
 export const metadata = {
   title: "About Us - IEES",
@@ -149,13 +150,13 @@ export default async function about() {
       */}
       <section className="w-full py-8 px-4 sm:px-8 md:p-12 flex flex-col items-center justify-between mt-24 ">
         <div className="flex h-auto max-w-[1400px] my-8 items-center">
-          <div className="hidden sm:flex flex-col justify-center items-center w-1/2">
+          <Floating className="hidden sm:flex flex-col justify-center items-center w-1/2">
             <Image
               alt="image"
               src={visionImage}
               className="object-contain h-[300px] md:h-[450px]"
             />
-          </div>
+          </Floating>
           <div className="w-full sm:w-1/2 flex flex-col items-end justify-stretch">
             <p className="text-base font-normal text-[#d2d6daff] opacity-80 mb-4">
               DREAM, ACHIEVE
@@ -191,13 +192,13 @@ export default async function about() {
               {content.mission}
             </span>
           </div>
-          <div className="hidden sm:flex w-1/2 items-center flex-col justify-center ">
+          <Floating className="hidden sm:flex w-1/2 items-center flex-col justify-center ">
             <Image
               alt=""
               src={missionImage}
               className="object-contain h-[300px] md:h-[450px]"
             />
-          </div>
+          </Floating>
         </div>
       </section>
       {/* 

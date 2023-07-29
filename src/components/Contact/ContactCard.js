@@ -3,6 +3,7 @@ import ContactForm from "./ContactForm";
 import Link from "next/link";
 import Hwave from "public/Assets/wave-h.svg";
 import Image from "next/image";
+import FadeSlide from "../motion/FadeSlide";
 
 const ContactDetail = ({ href, primeIcon, text }) => {
   return (
@@ -16,13 +17,17 @@ const ContactDetail = ({ href, primeIcon, text }) => {
 const ContactCard = ({ countries, contactDetails }) => {
   return (
     <div className="flex flex-col lg:flex-row w-full shadow-Card rounded-2xl bg-white">
-      <div className="pt-8 flex flex-col items-start md:py-16 px-8">
+      <FadeSlide
+        distance="sm"
+        delay={0.3}
+        className="pt-8 flex flex-col items-start md:py-16 px-8"
+      >
         <h3 className="text-[#344767ff] mb-4 ">Just afew fields to fill...</h3>
         <span className="mb-8 text-xl">
           Setting up the most suitable services for you.
         </span>
         <ContactForm countries={countries} />
-      </div>
+      </FadeSlide>
       {/*  */}
       <div className=" relative flex flex-1 flex-col justify-center pl-0 lg:pl-24 rounded-tr-none lg:rounded-tr-2xl rounded-bl-2xl lg:rounded-bl-none rounded-br-2xl bg-[url('/Assets/bg-curved.jpg')] bg-cover overflow-hidden text-white">
         <div className="absolute w-full h-full left-0 top-0 bg-gradient-to-b from-[#079ea8] to-[#005d63eb] opacity-90" />
@@ -33,7 +38,10 @@ const ContactCard = ({ countries, contactDetails }) => {
           width={1500}
           height={1500}
         />
-        <div className=" z-[1] flex flex-col items-start p-16">
+        <FadeSlide
+          distance="sm"
+          className=" z-[1] flex flex-col items-start p-16"
+        >
           <h2 className="text-3xl font-bold">Contact Information</h2>
           <p className="opacity-80">
             Fill up the form and our Team will get back to you within 24 hours.
@@ -81,7 +89,7 @@ const ContactCard = ({ countries, contactDetails }) => {
               </Link>
             )}
           </div>
-        </div>
+        </FadeSlide>
       </div>
     </div>
   );

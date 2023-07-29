@@ -25,7 +25,7 @@ export default async function projects() {
             <span>PROJECTS</span>
             <br></br>
           </h2>
-          <div className="w-[80%] flex-wrap flex flex-col justify-center gap-8 m-12 lg:m-14">
+          <div className="w-[80%] flex-wrap flex flex-col justify-center gap-12 m-12 lg:m-14">
             {projects.map((project) => (
               <ProjectCard key={project.id} projectData={project.data} />
             ))}

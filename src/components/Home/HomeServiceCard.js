@@ -3,10 +3,23 @@ import Link from "next/link";
 import OutlineGrayButton from "../UI/Buttons/outline-gray-button";
 import styles from "./HomeServiceCard.module.css";
 import LottiePlayer from "../UI/LottiePlayer";
+import FadeSlide from "../motion/FadeSlide";
 
-export default function HomeServiceCard({ linkTo, title, content, lottiSrc }) {
+export default function HomeServiceCard({
+  linkTo,
+  title,
+  content,
+  lottiSrc,
+  index,
+}) {
   return (
-    <div className={styles.wrapper}>
+    <FadeSlide
+      distance="sm"
+      duration={0.3}
+      delay={index % 2 !== 0 ? 0.3 : 0}
+      // whileHover={{ translteY: 7 }}
+      className={styles.wrapper}
+    >
       <div className={`${styles.homeServicesCard} ${styles.homeCard}`}>
         <div className={styles.playerContainer}>
           <LottiePlayer
@@ -30,6 +43,6 @@ export default function HomeServiceCard({ linkTo, title, content, lottiSrc }) {
           </Link>
         </div>
       </div>
-    </div>
+    </FadeSlide>
   );
 }

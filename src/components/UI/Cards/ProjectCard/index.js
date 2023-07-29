@@ -6,6 +6,7 @@ import styles from "./ProjectCard.module.css";
 import ProjectAccordion from "./ProjectCardAccordion";
 import { CSSTransition } from "react-transition-group";
 import Image from "next/image";
+import FadeSlide from "@/components/motion/FadeSlide";
 
 export default function ProjectCard({ projectData }) {
   const detailsDiv = useRef();
@@ -13,7 +14,12 @@ export default function ProjectCard({ projectData }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className={styles.project}>
+    <FadeSlide
+      distance={50}
+      duration={0.3}
+      disableFade
+      className={styles.project}
+    >
       <Card
         className={`${styles.card} h-[400px] lg:h-[350px] z-[1] flex items-center text-center justify-center group`}
       >
@@ -24,12 +30,11 @@ export default function ProjectCard({ projectData }) {
               ? projectData.imgsLinks[0]
               : "https://res.cloudinary.com/dhdonsil5/image/upload/v1671186833/IEES/Img/projects/1.UofCanada/UoC01_lc2dun.jpg"
           }
-          objectFit="cover"
           alt=""
           fill
         />
         <div
-          className={`absolute w-full h-full top-0 left-0 transition duration-150 bg-gradient-to-t from-[#2c3e5052] to-[#005d6373] group-hover:bg-[#00000087] z-[-1]`}
+          className={`object-cover absolute w-full h-full top-0 left-0 transition duration-150 bg-gradient-to-t from-[#2c3e5052] to-[#005d6373] group-hover:bg-[#00000087] z-[-1]`}
         />
 
         <div
@@ -77,6 +82,6 @@ export default function ProjectCard({ projectData }) {
           />
         </div>
       </CSSTransition>
-    </div>
+    </FadeSlide>
   );
 }

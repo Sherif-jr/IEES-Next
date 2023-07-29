@@ -57,7 +57,7 @@ thq-dropdown-toggle
   padding-bottom: var(--dl-space-space-halfunit);
   backdrop-filter: blur(30px);
   justify-content: space-between;
-  background-color: hsla(0, 0%, 100%, 0.3) !important;
+  background-color: hsla(0, 0%, 100%, 0.6) !important;
 }
 
 .headerNavlink {
